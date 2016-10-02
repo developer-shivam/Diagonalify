@@ -10,27 +10,27 @@
 
     <developer.shivam.library.DiagonalView android:id="@+id/diagonal_view"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="300dp"
         android:src="@drawable/gir_cover"
         android:scaleType="centerCrop"
         diagonal:diagonalColor="#FFFFFF"
         diagonal:backgroundColor="#50F44336"
+        diagonal:diagonalGravity="right"
         diagonal:angle="15"/>
 
     <View android:layout_width="170dp"
         android:layout_height="170dp"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="130dp"
         android:background="@drawable/circle"/>
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:src="@drawable/gir_coverphoto"
-        android:layout_marginRight="30dp"
-        android:layout_marginTop="90dp"
-        android:layout_alignParentRight="true"/>
+        android:src="@drawable/selena"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="140dp"
+        android:layout_alignParentLeft="true"/>
 
     <android.support.v7.widget.Toolbar android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -38,27 +38,21 @@
 
     <TextView android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Shivam Satija"
+        android:text="Selena Gomez"
         android:textColor="#000000"
         android:textSize="26sp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="260dp"/>
-
-    <TextView android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Android Application Developer"
-        android:textColor="#90000000"
-        android:textSize="14sp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="292dp"/>
-
-    <TextView android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="dr.droid27@gmail.com"
-        android:textColor="#80000000"
-        android:textSize="14sp"
-        android:layout_marginLeft="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
         android:layout_marginTop="310dp"/>
+
+    <TextView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Singer"
+        android:textColor="#90000000"
+        android:textSize="18sp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="340dp"/>
 
     <!--<TextView
         android:layout_width="wrap_content"
