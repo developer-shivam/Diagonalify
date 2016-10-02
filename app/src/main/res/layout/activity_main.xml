@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:diagonal="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context="developer.shivam.diagonalview.MainActivity">
+
+    <developer.shivam.library.DiagonalView android:id="@+id/diagonal_view"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:src="@drawable/gir_cover"
+        android:scaleType="centerCrop"
+        diagonal:diagonalColor="#FFFFFF"
+        diagonal:backgroundColor="#50F44336"
+        diagonal:angle="15"/>
+
+    <View android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/circle"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/gir_coverphoto"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="90dp"
+        android:layout_alignParentRight="true"/>
+
+    <android.support.v7.widget.Toolbar android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Shivam Satija"
+        android:textColor="#000000"
+        android:textSize="26sp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="260dp"/>
+
+    <TextView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Android Application Developer"
+        android:textColor="#90000000"
+        android:textSize="14sp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="292dp"/>
+
+    <TextView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="dr.droid27@gmail.com"
+        android:textColor="#80000000"
+        android:textSize="14sp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="310dp"/>
+
+    <!--<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:text="FOLLOW"
+        android:textSize="14sp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="150dp"
+        android:gravity="center"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textColor="#ffffff"
+        android:background="@drawable/text_background"/>-->
+
+
+</RelativeLayout>
