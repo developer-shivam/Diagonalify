@@ -11,7 +11,7 @@
     <developer.shivam.library.DiagonalView android:id="@+id/diagonal_view"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:src="@drawable/gir_cover"
+        android:src="@drawable/cover_photo"
         android:scaleType="centerCrop"
         diagonal:diagonalColor="#FFFFFF"
         diagonal:backgroundColor="#50F44336"
@@ -53,19 +53,5 @@
         android:layout_alignParentRight="true"
         android:layout_marginRight="20dp"
         android:layout_marginTop="340dp"/>
-
-    <!--<TextView
-        android:layout_width="wrap_content"
-        android:layout_height="25dp"
-        android:text="FOLLOW"
-        android:textSize="14sp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="150dp"
-        android:gravity="center"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:textColor="#ffffff"
-        android:background="@drawable/text_background"/>-->
-
 
 </RelativeLayout>
