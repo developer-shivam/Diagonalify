@@ -23,5 +23,8 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         diagonalView = (DiagonalView) findViewById(R.id.diagonal_view);
+        diagonalView.setAngle(15);
+        diagonalView.setDiagonalGravity(DiagonalView.LEFT);
+        diagonalView.setBackgroundColor(Color.WHITE);
     }
 }

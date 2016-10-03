@@ -118,4 +118,9 @@ public class DiagonalView extends ImageView {
         backgroundColor = color;
         invalidate();
     }
+
+    public void setDiagonalColor(int color) {
+        diagonalColor = color;
+        invalidate();
+    }
 }

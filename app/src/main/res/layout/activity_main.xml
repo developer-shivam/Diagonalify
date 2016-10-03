@@ -8,13 +8,13 @@
     android:background="#FFFFFF"
     tools:context="developer.shivam.diagonalview.MainActivity">
 
-    <developer.shivam.library.DiagonalView android:id="@+id/diagonal_view"
+<developer.shivam.library.DiagonalView android:id="@+id/diagonal_view"
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:src="@drawable/cover_photo"
         android:scaleType="centerCrop"
         diagonal:diagonalColor="#FFFFFF"
-        diagonal:backgroundColor="#50F44336"
+        diagonal:backgroundColor="#00F44336"
         diagonal:diagonalGravity="right"
         diagonal:angle="15"/>
 

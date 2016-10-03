@@ -1,50 +1,66 @@
 # Diagonalify
+####Create diagonal cuts on image view 
+
 #### Min SDK 9
 
 ![Banner](art/banner.png)
 ## Screnshots
 
-![Screenshot](art/screenshot_1.png)    ![Screenshot](art/screenshot_2.png)
-
+![Screenshot](art/screenshot_1.png)					![Screenshot](art/screenshot_2.png)
 
 ## Usage
-Use the gradle dependency and add these lines in your build.gradle file:
+Add these lines in your build.gradle file at root level:
 
 ```xml
 repositories {
         jcenter()
-}
-
-dependencies {
-    compile ' library ka gradle'
-    
+				maven { url "https://jitpack.io" }
 }
 ```
 
+```xml
+Add these lines in your build.gradle file at root level:
+dependencies {
+    compile 'com.github.developer-shivam:Diagonalify:1.0'    
+}
+```
 
 ## Basic Usage
+###Java
+```java
+
+		DiagonalView diagonalView = new DiagonalView(this);
+    diagonalView.setAngle(15);
+    diagonalView.setDiagonalGravity(DiagonalView.LEFT);
+    diagonalView.setBackgroundColor(Color.WHITE);
+
+```
+###XML
 ```xml
  
     <developer.shivam.library.DiagonalView android:id="@+id/diagonal_view"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:src="@drawable/gir_cover"
+        android:layout_height="300dp"
+        android:src="@drawable/cover_photo"
         android:scaleType="centerCrop"
-     />
+        diagonal:diagonalColor="#FFFFFF"
+        diagonal:backgroundColor="#00F44336"
+        diagonal:diagonalGravity="right"
+        diagonal:angle="15"/>
 
 ```
 
 ## Custom Attributes
 
-### To set Diagonal Color
+### Diagonal Color
 ```xml
         diagonal:diagonalColor="#FFFFFF"
 ```
-### To set Background Color
+### Background Color 
 ```xml
         diagonal:backgroundColor="#50F44336"
 ```
-### To set Diagonal Angle
+### Diagonal Angle
 ```xml
         diagonal:angle="15"
 ```
