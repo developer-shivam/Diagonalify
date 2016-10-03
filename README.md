@@ -21,7 +21,7 @@ repositories {
 ```xml
 Add these lines in your build.gradle file at root level:
 dependencies {
-    compile 'com.github.developer-shivam:Diagonalify:1.0'    
+    compile 'com.github.developer-shivam:Diagonalify:1.1'    
 }
 ```
 
@@ -32,6 +32,7 @@ dependencies {
 		DiagonalView diagonalView = new DiagonalView(this);
     diagonalView.setAngle(15);
     diagonalView.setDiagonalGravity(DiagonalView.LEFT);
+		diagonlaView.setDiagonalColor(Color.BLACK);
     diagonalView.setBackgroundColor(Color.WHITE);
 
 ```
