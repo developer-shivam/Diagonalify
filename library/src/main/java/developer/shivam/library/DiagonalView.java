@@ -41,6 +41,11 @@ public class DiagonalView extends ImageView {
     int backgroundColor;
 
     /**
+     * @diagonalColorAlpha is the opacity of the color
+     */
+    int diagonalColorAlpha = 255;
+
+    /**
      * RIGHT and LEFT would be the gravity of diagonal
      *  if diagonalGravity is LEFT then diagonal will start from left
      *  and start increasing to RIGHT and reverse if gravity is RIGHT
@@ -72,7 +77,11 @@ public class DiagonalView extends ImageView {
         if (styledAttributes.hasValue(R.styleable.diagonal_diagonalGravity)) {
             diagonalGravity = styledAttributes.getString(R.styleable.diagonal_diagonalGravity);
         }
+
         backgroundColor = styledAttributes.getColor(R.styleable.diagonal_backgroundColor, Color.TRANSPARENT);
+        if (styledAttributes.hasValue(R.styleable.diagonal_backgroundColorAlpha)) {
+            backgroundColor  = Integer.valueOf(Integer.toHexString(styledAttributes.getInt(R.styleable.diagonal_backgroundColorAlpha, 0))) + backgroundColor;
+        }
 
         styledAttributes.recycle();
 
