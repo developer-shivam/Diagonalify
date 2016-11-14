@@ -5,8 +5,8 @@
         <attr name="diagonalGravity" format="integer">
             <flag name="left" value="1" />
             <flag name="right" value="2" />
-            <flag name="bottom" value="3" />
-            <flag name="top" value="4" />
+            <flag name="bottom" value="4" />
+            <flag name="top" value="8" />
         </attr>
     </declare-styleable>
 </resources>

@@ -1,15 +1,19 @@
 package developer.shivam.library;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
-import android.graphics.Color;
+import android.graphics.Outline;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
+import android.os.Build;
+import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
-import android.widget.FrameLayout;
+import android.view.View;
+import android.view.ViewOutlineProvider;
 import android.widget.ImageView;
 
 public class DiagonalView extends ImageView {
@@ -33,6 +37,7 @@ public class DiagonalView extends ImageView {
     int width = 0;
 
     Path mPath;
+    Path mOutlinePath;
 
     Paint mPaint;
 
@@ -44,6 +49,8 @@ public class DiagonalView extends ImageView {
 
     public static int LEFT = 1;
     public static int RIGHT = 2;
+    public static int TOP = 4;
+    public static int BOTTOM = 8;
 
     private PorterDuffXfermode porterDuffXfermode;
 
@@ -70,6 +77,7 @@ public class DiagonalView extends ImageView {
         porterDuffXfermode = new PorterDuffXfermode(PorterDuff.Mode.CLEAR);
 
         mPath = new Path();
+        mOutlinePath = new Path();
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
 
         TypedArray styledAttributes = getContext().obtainStyledAttributes(attrs, R.styleable.DiagonalView, 0, 0);
@@ -80,6 +88,11 @@ public class DiagonalView extends ImageView {
 
         styledAttributes.recycle();
 
+        ViewCompat.setElevation(this, 40);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            setOutlineProvider(getOutlineProvider());
+        }
     }
 
     @Override
@@ -96,6 +109,20 @@ public class DiagonalView extends ImageView {
 
         mPath = ClipProvider.getDiagonalCutPath(width, height, angle, 0, diagonalGravity,
                 paddingLeft, paddingRight, paddingTop, paddingBottom);
+
+        mOutlinePath = ClipProvider.getDiagonalOutlinePath(width, height, angle, 0, diagonalGravity,
+                paddingLeft, paddingRight, paddingTop, paddingBottom);
+    }
+
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    @Override
+    public ViewOutlineProvider getOutlineProvider() {
+        return new ViewOutlineProvider() {
+            @Override
+            public void getOutline(View view, Outline outline) {
+                outline.setConvexPath(mOutlinePath);
+            }
+        };
     }
 
     @Override

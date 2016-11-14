@@ -19,7 +19,7 @@
         android:layout_height="300dp"
         android:src="@drawable/selena"
         android:scaleType="centerCrop"
-        android:layout_alignParentTop="true"
-        diagonal:angle="15"
-        diagonal:diagonalGravity="right"/>
+        android:layout_alignParentBottom="true"
+        diagonal:angle="45"
+        diagonal:diagonalGravity="left|bottom"/>
 </RelativeLayout>
