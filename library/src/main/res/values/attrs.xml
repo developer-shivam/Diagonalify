@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="diagonal">
+    <declare-styleable name="DiagonalView">
         <attr name="angle" format="integer" />
-        <attr name="diagonalColor" format="color" />
-        <attr name="diagonalGravity" format="string" />
-        <attr name="backgroundColor" format="color" />
-        <attr name="backgroundColorAlpha" format="integer" />
+        <attr name="diagonalGravity" format="integer">
+            <flag name="left" value="1" />
+            <flag name="right" value="2" />
+            <flag name="bottom" value="3" />
+            <flag name="top" value="4" />
+        </attr>
     </declare-styleable>
 </resources>

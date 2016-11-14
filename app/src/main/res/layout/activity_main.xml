@@ -8,55 +8,18 @@
     android:background="#FFFFFF"
     tools:context="developer.shivam.diagonalview.MainActivity">
 
-    <developer.shivam.library.DiagonalView   android:id="@+id/diagonal_view"
+    <ListView
+        android:id="@+id/lvSampleItems"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <developer.shivam.library.DiagonalView
+        android:id="@+id/diagonal_view"
         android:layout_width="match_parent"
         android:layout_height="300dp"
+        android:src="@drawable/selena"
         android:scaleType="centerCrop"
-        android:src="@drawable/cover_photo"
+        android:layout_alignParentTop="true"
         diagonal:angle="15"
-        diagonal:backgroundColor="#F44336"
-        diagonal:backgroundColorAlpha="20"
-        diagonal:diagonalColor="#FFFFFF"
-        diagonal:diagonalGravity="right" />
-
-    <View
-        android:layout_width="170dp"
-        android:layout_height="170dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="130dp"
-        android:background="@drawable/circle" />
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="140dp"
-        android:src="@drawable/selena" />
-
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="310dp"
-        android:text="Selena Gomez"
-        android:textColor="#000000"
-        android:textSize="26sp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="340dp"
-        android:text="Singer"
-        android:textColor="#90000000"
-        android:textSize="18sp" />
-
+        diagonal:diagonalGravity="right"/>
 </RelativeLayout>
