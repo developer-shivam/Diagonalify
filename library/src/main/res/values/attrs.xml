@@ -8,5 +8,6 @@
             <flag name="bottom" value="4" />
             <flag name="top" value="8" />
         </attr>
+        <attr name="horizontalShift" format="dimension" />
     </declare-styleable>
 </resources>

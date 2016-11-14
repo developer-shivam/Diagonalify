@@ -4,7 +4,7 @@ import android.graphics.Path;
 
 public class ClipProvider {
 
-    private static float SHADOW_CORRECTION = 10f;
+    private static float SHADOW_CORRECTION = 10;
     private static int ALPHA = 1;
 
     /**
@@ -100,22 +100,22 @@ public class ClipProvider {
             }
         } else {
             if ((gravity & DiagonalView.LEFT) == DiagonalView.LEFT) {
-                mPath.moveTo(paddingLeft, perpendicularHeight - paddingTop);
+                mPath.moveTo(paddingLeft - SHADOW_CORRECTION, perpendicularHeight - paddingTop - SHADOW_CORRECTION);
                 if (horizontalShift > 0 && horizontalShift < width) {
-                    mPath.lineTo(horizontalShift + paddingLeft, perpendicularHeight - paddingTop);
+                    mPath.lineTo(horizontalShift + paddingLeft - SHADOW_CORRECTION, perpendicularHeight - paddingTop - SHADOW_CORRECTION);
                 }
-                mPath.lineTo(width - paddingRight, paddingTop);
-                mPath.lineTo(width - paddingRight, height - paddingBottom);
-                mPath.lineTo(paddingLeft, height - paddingBottom);
+                mPath.lineTo(width - paddingRight , paddingTop - SHADOW_CORRECTION);
+                mPath.lineTo(width - paddingRight , height - paddingBottom - SHADOW_CORRECTION);
+                mPath.lineTo(paddingLeft - SHADOW_CORRECTION, height - paddingBottom);
                 mPath.close();
             } else {
-                mPath.moveTo(paddingLeft, paddingTop);
+                mPath.moveTo(paddingLeft - SHADOW_CORRECTION, paddingTop - SHADOW_CORRECTION);
                 if (horizontalShift > 0 && horizontalShift < width) {
-                    mPath.lineTo(horizontalShift - paddingLeft, paddingTop);
+                    mPath.lineTo(horizontalShift - paddingLeft - SHADOW_CORRECTION, paddingTop - SHADOW_CORRECTION);
                 }
-                mPath.lineTo(width - paddingRight, perpendicularHeight - paddingTop);
-                mPath.lineTo(width - paddingRight, height - paddingBottom);
-                mPath.lineTo(paddingLeft, height - paddingBottom);
+                mPath.lineTo(width - paddingRight + SHADOW_CORRECTION, perpendicularHeight - paddingTop - SHADOW_CORRECTION);
+                mPath.lineTo(width - paddingRight + SHADOW_CORRECTION, height - paddingBottom - SHADOW_CORRECTION);
+                mPath.lineTo(paddingLeft - SHADOW_CORRECTION, height - paddingBottom - SHADOW_CORRECTION);
                 mPath.close();
             }
         }

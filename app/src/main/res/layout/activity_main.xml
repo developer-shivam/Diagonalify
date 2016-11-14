@@ -8,27 +8,44 @@
     android:background="#FFFFFF"
     tools:context="developer.shivam.diagonalview.MainActivity">
 
-    <ListView
-        android:id="@+id/lvSampleItems"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <EditText android:id="@+id/username"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:textColorHint="#50848484"
+            android:hint="username"/>
+
+        <EditText
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:hint="password"
+            android:textColorHint="#50848484"
+            android:layout_below="@id/username"/>
+    </RelativeLayout>
 
     <developer.shivam.library.DiagonalView
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:src="@color/colorPrimary"
-        android:scaleType="centerCrop"
+        android:layout_height="210dp"
         android:layout_alignParentTop="true"
+        android:scaleType="centerCrop"
+        android:src="@color/colorPrimary"
         diagonal:angle="30"
-        diagonal:diagonalGravity="left|top"/>
+        android:elevation="5dp"
+        diagonal:diagonalGravity="left|top" />
 
     <developer.shivam.library.DiagonalView
         android:id="@+id/diagonal_view"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/selena"
+        android:layout_height="210dp"
         android:layout_alignParentBottom="true"
+        android:scaleType="centerCrop"
+        android:src="@color/colorPrimary"
         diagonal:angle="30"
-        diagonal:diagonalGravity="left|bottom"/>
+        android:elevation="10dp"
+        diagonal:diagonalGravity="left|bottom" />
 </RelativeLayout>

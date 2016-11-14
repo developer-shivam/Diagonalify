@@ -61,6 +61,8 @@ public class DiagonalView extends ImageView {
     private int paddingTop = 0;
     private int paddingBottom = 0;
 
+    int shift = 0;
+
     public DiagonalView(Context context) {
         super(context);
         init(context, null);
@@ -85,10 +87,13 @@ public class DiagonalView extends ImageView {
         if (styledAttributes.hasValue(R.styleable.DiagonalView_diagonalGravity)) {
             diagonalGravity = styledAttributes.getInt(R.styleable.DiagonalView_diagonalGravity, 0);
         }
+        if  (styledAttributes.hasValue(R.styleable.DiagonalView_horizontalShift)) {
+            shift = (int) styledAttributes.getDimension(R.styleable.DiagonalView_horizontalShift, 0);
+        }
 
         styledAttributes.recycle();
 
-        ViewCompat.setElevation(this, 40);
+        ViewCompat.setElevation(this, ViewCompat.getElevation(this));
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             setOutlineProvider(getOutlineProvider());
@@ -107,10 +112,10 @@ public class DiagonalView extends ImageView {
         paddingTop = getPaddingTop();
         paddingBottom = getPaddingBottom();
 
-        mPath = ClipProvider.getDiagonalCutPath(width, height, angle, 0, diagonalGravity,
+        mPath = ClipProvider.getDiagonalCutPath(width, height, angle, shift, diagonalGravity,
                 paddingLeft, paddingRight, paddingTop, paddingBottom);
 
-        mOutlinePath = ClipProvider.getDiagonalOutlinePath(width, height, angle, 0, diagonalGravity,
+        mOutlinePath = ClipProvider.getDiagonalOutlinePath(width, height, angle, shift, diagonalGravity,
                 paddingLeft, paddingRight, paddingTop, paddingBottom);
     }
 
@@ -120,7 +125,11 @@ public class DiagonalView extends ImageView {
         return new ViewOutlineProvider() {
             @Override
             public void getOutline(View view, Outline outline) {
-                outline.setConvexPath(mOutlinePath);
+                try {
+                    outline.setConvexPath(mOutlinePath);
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
             }
         };
     }

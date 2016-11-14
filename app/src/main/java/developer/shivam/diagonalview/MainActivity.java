@@ -19,13 +19,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        lvSampleList = (ListView) findViewById(R.id.lvSampleItems);
-        String[] numbers = new String[100];
-        for (int i = 0; i < numbers.length; i++) {
-            numbers[i] = String.valueOf(i + 1);
-        }
-        lvSampleList.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, numbers));
-
         diagonalView = (DiagonalView) findViewById(R.id.diagonal_view);
     }
 }
