@@ -14,12 +14,21 @@
         android:layout_height="match_parent" />
 
     <developer.shivam.library.DiagonalView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:src="@color/colorPrimary"
+        android:scaleType="centerCrop"
+        android:layout_alignParentTop="true"
+        diagonal:angle="30"
+        diagonal:diagonalGravity="left|top"/>
+
+    <developer.shivam.library.DiagonalView
         android:id="@+id/diagonal_view"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:src="@drawable/selena"
+        android:layout_height="250dp"
         android:scaleType="centerCrop"
+        android:src="@drawable/selena"
         android:layout_alignParentBottom="true"
-        diagonal:angle="45"
+        diagonal:angle="30"
         diagonal:diagonalGravity="left|bottom"/>
 </RelativeLayout>

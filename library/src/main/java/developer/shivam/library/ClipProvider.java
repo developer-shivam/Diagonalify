@@ -43,22 +43,22 @@ public class ClipProvider {
             }
         } else {
             if ((gravity & DiagonalView.LEFT) == DiagonalView.LEFT) {
-                mPath.moveTo(paddingLeft, perpendicularHeight - paddingTop - paddingBottom);
+                mPath.moveTo(paddingLeft, 0);
+                mPath.lineTo(paddingLeft, perpendicularHeight - paddingTop);
                 if (horizontalShift > 0 && horizontalShift < width) {
-                    mPath.lineTo(horizontalShift + paddingLeft, perpendicularHeight - paddingTop - paddingBottom);
+                    mPath.lineTo(horizontalShift + paddingLeft, perpendicularHeight - paddingTop);
                 }
-                mPath.lineTo(width - paddingRight, paddingBottom + paddingTop);
-                mPath.lineTo(width - paddingRight, ALPHA);
-                mPath.lineTo(paddingLeft, ALPHA);
+                mPath.lineTo(width - paddingRight, paddingTop);
+                mPath.lineTo(width - paddingRight, 0);
                 mPath.close();
             } else {
                 mPath.moveTo(paddingLeft, paddingTop);
                 if (horizontalShift > 0 && horizontalShift < width) {
                     mPath.lineTo(horizontalShift + paddingLeft, paddingTop);
                 }
-                mPath.lineTo(width - paddingRight, perpendicularHeight - paddingBottom - paddingTop);
-                mPath.lineTo(width - paddingRight, ALPHA);
-                mPath.lineTo(paddingLeft, ALPHA);
+                mPath.lineTo(width - paddingRight, perpendicularHeight - paddingTop);
+                mPath.lineTo(width - paddingRight, 0);
+                mPath.lineTo(paddingLeft, 0);
                 mPath.close();
             }
         }
@@ -78,44 +78,44 @@ public class ClipProvider {
         float perpendicularHeight = (float) (width * Math.tan(Math.toRadians(angle)));
 
         Path mPath = new Path();
-        if ((gravity & DiagonalView.TOP) == DiagonalView.TOP) {
+        if ((gravity & DiagonalView.TOP) != DiagonalView.TOP) {
             if ((gravity & DiagonalView.LEFT) == DiagonalView.LEFT) {
-                mPath.moveTo(paddingLeft, height - paddingBottom);
+                mPath.moveTo(paddingLeft, height - paddingBottom - paddingTop);
                 if (horizontalShift > 0 && horizontalShift < width) {
-                    mPath.lineTo(horizontalShift + paddingLeft, height - paddingBottom);
+                    mPath.lineTo(horizontalShift + paddingLeft, height - paddingBottom - paddingTop);
                 }
-                mPath.lineTo(width - paddingRight, height - perpendicularHeight - paddingBottom);
-                mPath.lineTo(width - paddingRight, paddingTop);
-                mPath.lineTo(paddingLeft, paddingTop);
+                mPath.lineTo(width - paddingRight, height - perpendicularHeight - paddingBottom - paddingTop);
+                mPath.lineTo(width - paddingRight, 0);
+                mPath.lineTo(paddingLeft, 0);
                 mPath.close();
             } else {
-                mPath.moveTo(width - paddingLeft, height - paddingBottom);
+                mPath.moveTo(width - paddingLeft, height - paddingBottom - paddingTop);
                 if (horizontalShift > 0 && horizontalShift < width) {
-                    mPath.lineTo(horizontalShift - paddingLeft, height - paddingBottom);
+                    mPath.lineTo(horizontalShift - paddingLeft, height - paddingBottom - paddingTop);
                 }
-                mPath.lineTo(paddingRight, height - perpendicularHeight - paddingBottom);
-                mPath.lineTo(paddingRight, paddingTop);
-                mPath.lineTo(width - paddingLeft, paddingTop);
+                mPath.lineTo(paddingRight, height - perpendicularHeight - paddingBottom - paddingTop);
+                mPath.lineTo(paddingRight, 0);
+                mPath.lineTo(width - paddingLeft, 0);
                 mPath.close();
             }
         } else {
             if ((gravity & DiagonalView.LEFT) == DiagonalView.LEFT) {
-                mPath.moveTo(paddingLeft, perpendicularHeight);
+                mPath.moveTo(paddingLeft, perpendicularHeight - paddingTop);
                 if (horizontalShift > 0 && horizontalShift < width) {
-                    mPath.lineTo(horizontalShift + paddingLeft, height - paddingBottom);
+                    mPath.lineTo(horizontalShift + paddingLeft, perpendicularHeight - paddingTop);
                 }
-                mPath.lineTo(width - paddingRight, height - perpendicularHeight - paddingBottom);
                 mPath.lineTo(width - paddingRight, paddingTop);
-                mPath.lineTo(paddingLeft, paddingTop);
+                mPath.lineTo(width - paddingRight, height - paddingBottom);
+                mPath.lineTo(paddingLeft, height - paddingBottom);
                 mPath.close();
             } else {
-                mPath.moveTo(width - paddingLeft, height - paddingBottom);
+                mPath.moveTo(paddingLeft, paddingTop);
                 if (horizontalShift > 0 && horizontalShift < width) {
-                    mPath.lineTo(horizontalShift - paddingLeft, height - paddingBottom);
+                    mPath.lineTo(horizontalShift - paddingLeft, paddingTop);
                 }
-                mPath.lineTo(paddingRight, height - perpendicularHeight - paddingBottom);
-                mPath.lineTo(paddingRight, paddingTop);
-                mPath.lineTo(width - paddingLeft, paddingTop);
+                mPath.lineTo(width - paddingRight, perpendicularHeight - paddingTop);
+                mPath.lineTo(width - paddingRight, height - paddingBottom);
+                mPath.lineTo(paddingLeft, height - paddingBottom);
                 mPath.close();
             }
         }
